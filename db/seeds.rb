@@ -1,7 +1,7 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+now = Time.zone.now.utc
+(1..100).each do |n| 
+	reading = Reading.create(temp_c: rand(0...50000))
+	reading.created_at = now + n * 60
+	reading.updated_at = now + n * 60
+	reading.save
+end
