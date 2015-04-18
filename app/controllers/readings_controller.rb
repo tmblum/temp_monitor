@@ -4,6 +4,10 @@ class ReadingsController < ApplicationController
   	render json: reading
   end
 
+ 	def index
+ 		@readings = Reading.all
+ 	end
+
   private
 
   def reading_params
