@@ -1,3 +1,14 @@
-<% @readings.each do |reading| %>
-	<%= reading.temp_c %>
-<% end %>
+<table>
+	<thead>
+		<th>temperature_c</th>
+		<th>time</th>
+	</thead>
+	<tbody>
+		<% @readings.each do |reading| %>
+			<tr>
+				<td><%= reading.temp_c %></td>
+				<td><%= reading.created_at %></td> 
+			</tr>
+		<% end %>
+	</tbody>
+</table>
