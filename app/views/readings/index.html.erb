@@ -1,12 +1,14 @@
 <table>
 	<thead>
 		<th>temperature_c</th>
+		<th>temperature_f</th>
 		<th>time</th>
 	</thead>
 	<tbody>
 		<% @readings.each do |reading| %>
 			<tr>
-				<td><%= reading.temp_c %></td>
+				<td><%= reading.celsius %></td>
+				<td><%= reading.fahrenheit %></td>
 				<td><%= reading.created_at %></td> 
 			</tr>
 		<% end %>
