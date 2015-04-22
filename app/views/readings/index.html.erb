@@ -1,16 +1,16 @@
-<table>
-	<thead>
-		<th>temperature_c</th>
-		<th>temperature_f</th>
-		<th>time</th>
-	</thead>
-	<tbody>
-		<% @readings.each do |reading| %>
-			<tr>
-				<td><%= reading.celsius %></td>
-				<td><%= reading.fahrenheit %></td>
-				<td><%= reading.created_at %></td> 
-			</tr>
-		<% end %>
-	</tbody>
-</table>
+<canvas id="myChart" width="400" height="400"></canvas>
+<script>
+	var data = {
+		labels: <%= @readings.each_with_index.map { |r, index| index.to_s }.to_s.html_safe %>,
+		datasets: [{
+			label: "My First dataset",
+      fillColor: "rgba(220,220,220,0.2)",
+      strokeColor: "rgba(220,220,220,1)",
+      pointColor: "rgba(220,220,220,1)",
+      pointStrokeColor: "#fff",
+      pointHighlightFill: "#fff",
+      pointHighlightStroke: "rgba(220,220,220,1)",
+			data: <%= @readings.map { |reading| reading.fahrenheit } %>
+		}]
+	};
+</script>
