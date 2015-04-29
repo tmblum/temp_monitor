@@ -1,7 +1,9 @@
 class ReadingsController < ApplicationController
   def create
   	reading = Reading.create(reading_params)
-  	render json: reading
+  	respond_to do |f|
+  		f.json {render json: reading}
+  	end
   end
 
  	def index
