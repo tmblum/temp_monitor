@@ -4,6 +4,6 @@ class Reading < ActiveRecord::Base
 		(temp_c/1000.0).round(1)
 	end
 	def fahrenheit
-		celsius*(9/5)+32
+		celsius*(9.0/5)+32
 	end
 end
