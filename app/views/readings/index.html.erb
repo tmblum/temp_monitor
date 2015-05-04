@@ -1,3 +1,13 @@
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<span class='navbar-brand'>observe:weather</span>
+		</div>
+		<div class="collapse navbar-collapse">
+			<p class='navbar-text navbar-right'><%= Date.today.strftime("%a %B %e").downcase %></p>
+		</div>
+	</div>
+</nav>
 <canvas id="myChart" width="400" height="400"></canvas>
 <script>
 	var data = {
@@ -14,3 +24,6 @@
 		}]
 	};
 </script>
+<footer class="footer">
+		<p class="text-muted">Copyright 2015.</p>
+</footer>
